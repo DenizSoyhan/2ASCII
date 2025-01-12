@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 ASCII</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="title">
+        <img class="titleImg" src="images/ascii-art(7).png" alt="">
+        <div class="subTitle"> Turn Images 2ASCII</div>
+    </h1>
+    <div class="backgroundRemoverContainer"><a href="https://www.pixelcut.ai/t/background-remover" target="_blank">CLICK ME FOR BACKGROUND REMOVER</a></div>
+    <form id="uploadForm">
+        <div class="uploadStuff">
+            <label for="fileInput">Upload an Image:</label>
+            <input type="file" id="fileInput" accept="image/*">
+        </div>
+
+        <br><br>
+
+        <button type="button" id="convertButton">Convert to ASCII</button>
+    </form>
+    <div id="output"></div>
+    <button id="downloadButton" style="display: none;">Download as PNG</button>
+    <canvas id="asciiCanvas"></canvas>
+
+    <script src="app.js"></script>
+</body>
+</html>

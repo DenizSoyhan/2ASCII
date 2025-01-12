@@ -1,0 +1,108 @@
+/* General reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: monospace, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: black;
+
+    color: white;
+
+
+}
+.title{
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.5rem;
+}
+
+a:visited{
+    text-decoration: inherit;
+    color: green;
+    cursor: pointer;
+}
+.backgroundRemoverContainer{
+    text-align: center;
+    font-weight: bold;
+    
+}
+#fileInput{
+    padding: 10px 20px;
+
+    color: white;
+    background-color: #313131;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+#uploadForm{
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+#convertButton,#downloadButton{
+    background-color: #313131;
+}
+/* Wrapper for responsiveness */
+
+
+@media (max-width:550px){
+    .titleImg{
+        max-width: 500px;
+    }
+}
+
+/* Canvas styling */
+canvas {
+    display: block;
+    max-width: 100%; /* Makes it responsive */
+    height: auto;
+    border: 1px solid #ccc;
+    margin: 1em 0 3em 0;
+}
+
+/* File input styling */
+#fileInput {
+    margin: 20px 0;
+}
+
+/* Button styling */
+button {
+    min-width: 172px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+/* ASCII art text preview (bottom section) */
+#output{
+    display: none;
+}
+
+/* Media query for smaller screens */
