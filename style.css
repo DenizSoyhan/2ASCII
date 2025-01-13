@@ -4,9 +4,11 @@ body {
     padding: 0;
     font-family: monospace, sans-serif;
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
     background-color: black;
 
@@ -26,15 +28,20 @@ body {
 
     font-size: 1.5rem;
 }
-
-a:visited{
+a{
     text-decoration: inherit;
+    text-decoration: underline;
     color: green;
     cursor: pointer;
+}
+a:visited{
+    color: purple;
 }
 .backgroundRemoverContainer{
     text-align: center;
     font-weight: bold;
+
+    margin-bottom: 20px;
     
 }
 #fileInput{
@@ -58,18 +65,21 @@ a:visited{
 
     
 }
+.uploadStuff{
+    display: flex;
 
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
 #convertButton,#downloadButton{
     background-color: #313131;
 }
 /* Wrapper for responsiveness */
 
 
-@media (max-width:550px){
-    .titleImg{
-        max-width: 500px;
-    }
-}
+
 
 /* Canvas styling */
 canvas {
@@ -82,7 +92,7 @@ canvas {
 
 /* File input styling */
 #fileInput {
-    margin: 20px 0;
+    margin: 0 0 20px 0;
 }
 
 /* Button styling */
@@ -106,3 +116,9 @@ button {
 }
 
 /* Media query for smaller screens */
+@media (max-width:550px){
+    
+    .titleImg{
+        max-width: 400px;
+    }
+}
