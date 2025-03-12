@@ -28,6 +28,9 @@ body {
 
     font-size: 1.5rem;
 }
+.titleImg{
+    max-width: 550px;
+}
 a{
     text-decoration: inherit;
     text-decoration: underline;
@@ -73,9 +76,10 @@ a:visited{
     justify-content: center;
     align-items: center;
 }
-#convertButton,#downloadButton{
+#convertButton,#downloadButton,#copyButton{
     background-color: #313131;
 }
+
 /* Wrapper for responsiveness */
 
 
@@ -114,6 +118,21 @@ button {
 #output{
     display: none;
 }
+#asciiOutput {
+    white-space: pre; /* Ensures spacing is preserved */
+
+
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #444;
+    overflow-x: auto; /* Enables horizontal scrolling if needed */
+    max-width: 90vw; 
+    max-height: 700px;
+
+}
+
+
 
 /* Media query for smaller screens */
 @media (max-width:550px){

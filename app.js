@@ -1,10 +1,32 @@
 const fileInput = document.getElementById('fileInput');
 const convertButton = document.getElementById('convertButton');
-const output = document.getElementById('output');
+const output = document.getElementById('output'); //waiting patiently to be used one day :3
 const downloadButton = document.getElementById('downloadButton');
 const asciiCanvas = document.getElementById('asciiCanvas');
 
+const asciiOutput = document.getElementById('asciiOutput');
+const copyButton = document.getElementById('copyButton');
+
 let asciiArt = '';
+
+
+copyButton.addEventListener('click', () => {
+    const selection = window.getSelection();
+    const range = document.createRange();
+    range.selectNodeContents(asciiOutput); // Select all the text within asciiOutput
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+    try {
+        document.execCommand('copy'); // Copy the selected text (exec command seems to be really old)
+        alert('ASCII copied to clipboard!');
+    } catch (err) {
+        console.error('Failed to copy:', err);
+    }
+    selection.removeAllRanges(); // Deselect after copying
+});
+
+
 
 convertButton.addEventListener('click', () => {
     const file = fileInput.files[0];
@@ -21,7 +43,7 @@ convertButton.addEventListener('click', () => {
 
         img.onload = () => {
             const aspectRatio = img.height / img.width;
-            const canvasWidth = 100; 
+            const canvasWidth = 90; 
             const canvasHeight = Math.round(canvasWidth * aspectRatio * 0.55); //can be changed to make font fit
 
             const canvas = document.createElement('canvas');
@@ -57,13 +79,19 @@ convertButton.addEventListener('click', () => {
                 asciiCtx.fillText(line, 0, index * charHeight);
             });
 
-            // Show the download button after the file is converted
+            // Show elements after the file is converted
             downloadButton.style.display = 'inline-block';
+            copyButton.style.display='inline-block';
+            asciiOutput.style.display='inline-block';
+            asciiOutput.textContent = asciiArt;
         };
+        
     };
 
     reader.readAsDataURL(file);
 });
+
+
 
 downloadButton.addEventListener('click', () => {
     if (!asciiArt) {

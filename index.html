@@ -14,7 +14,7 @@
     <div class="backgroundRemoverContainer"><a href="https://www.pixelcut.ai/t/background-remover" target="_blank">CLICK ME FOR BACKGROUND REMOVER</a></div>
     <form id="uploadForm">
         <div class="uploadStuff">
-            <label for="fileInput">Upload an Image:</label><!--TODO: MAKE IT COMPATIBLE WITH SMALLER SCREEN SIZES-->
+            <label for="filaeInput">Upload an Image:</label>
                                                             <!--BETTER COLORS FOR UNVISITED LINK-->
             <input type="file" id="fileInput" accept="image/*">
         </div>
@@ -23,9 +23,18 @@
 
         <button type="button" id="convertButton">Convert to ASCII</button>
     </form>
-    <div id="output"></div>
+    <div id="output">
+    </div>
+
+
     <button id="downloadButton" style="display: none;">Download as PNG</button>
     <canvas id="asciiCanvas"></canvas>
+
+    <button id="copyButton" style="display: none;">Copy ASCII</button>
+
+    <pre id="asciiOutput" contenteditable="true" style="display: none;"></pre>
+    
+
 
     <script src="app.js"></script>
 </body>
